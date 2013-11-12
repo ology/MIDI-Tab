@@ -1,4 +1,4 @@
 MIDI-Tab
 ========
 
-Generate MIDI from ASCII tablature
+Perl procedures to generate MIDI from ASCII tablature

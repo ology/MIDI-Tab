@@ -2,7 +2,7 @@ Revision history for MIDI-Tab
 
 {{NEXT}}
     - Enhanced dzil distribution
-    - Fixed spelling errors (exposed by Test::PodSpelling).
+    - Fixed egregious spelling errors (exposed by Test::PodSpelling).
     - Exposed the rhythm control line as "experimental."
 
 0.03_1 Sun Feb 5 2012

@@ -80,8 +80,9 @@ is designed to work alongside C<MIDI::Simple>.
 Currently, there are three types of tablature supported: drum, guitar
 and piano tab.
 
-Note that bar lines (C<|>) are ignored.  Also the C<control line> may be
-specified to alter no-ops for individual notes.
+Note that bar lines (C<|>) are ignored.  Also a C<control line> may be
+specified, in order to alter no-ops for individual notes.  This is an
+incomplete, experimental but useful feature.
 
 =cut
 

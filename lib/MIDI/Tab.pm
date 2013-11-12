@@ -61,7 +61,7 @@ MIDI::Tab - Generate MIDI from ASCII tablature
 
   write_score('MIDI-Tab.mid');
 
-  # Use of the control line:
+  # Use of the (experimental) control line:
   $tab = <<'EOF';
   CTL: --------3-3-3-3---------
   HH:  959595959595959595959595
@@ -70,12 +70,12 @@ MIDI::Tab - Generate MIDI from ASCII tablature
 =head1 DESCRIPTION
 
 C<MIDI::Tab> allows you to create MIDI files from ASCII tablature.  It
-is designed to work alongside Sean M. Burke's C<MIDI::Simple>.
+is designed to work alongside C<MIDI::Simple>.
 
 Currently, there are three types of tablature supported: drum, guitar
 and piano tab.
 
-Note that bar lines (C<|>) are ignored.  Also a "control line" may be
+Note that bar lines (C<|>) are ignored.  Also the C<control line> may be
 specified to alter no-ops for individual notes.
 
 =cut
@@ -148,9 +148,9 @@ start of the tab rendering.  For example, the length of each unit
 of time can be specified by passing a C<MIDI::Simple> duration value
 (e.g. 'sn').
 
-Additionally, a "control line" for individual note modification may
+Additionally, a C<control line> for individual note modification may
 be included in the tab, at the same vertical position as the note it
-modifies.  This line must be named C<CTL>.  At this point it is only
+modifies.  This line must be named B<CTL>.  At this point it is only
 used to specify triplet timing.
 
 =head2 from_guitar_tab()

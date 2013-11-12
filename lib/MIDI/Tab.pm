@@ -146,7 +146,7 @@ Parameters to the C<from_*_tab()> routines, that are specified after
 the tablature string, are passed as C<MIDI::Simple::noop> calls at the
 start of the tab rendering.  For example, the length of each unit
 of time can be specified by passing a C<MIDI::Simple> duration value
-(eg 'sn').
+(e.g. 'sn').
 
 Additionally, a "control line" for individual note modification may
 be included in the tab, at the same vertical position as the note it

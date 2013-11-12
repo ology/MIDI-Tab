@@ -1,0 +1,12 @@
+M::T=~/sandbox/github/ology/MIDI-Tab CD=. {
+ lib=lib/MIDI {
+  Tab.pm
+ }
+ t=t {
+  00-load.t
+  01-methods.t
+ }
+ Changes
+ dist.ini
+ README.md
+}

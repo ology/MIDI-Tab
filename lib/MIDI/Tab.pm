@@ -10,13 +10,13 @@ use base 'Exporter';
 our @ISA = qw(Exporter);
 our @EXPORT = qw(from_guitar_tab from_drum_tab from_piano_tab);
 
-our $VERSION = '0.03_1';
+our $VERSION = '0.04';
 
 use constant CONTROL => 'CTL';
 
 =head1 NAME
 
-MIDI::Tab - Generate MIDI from ASCII tablature
+MIDI::Tab - Generate MIDI from ASCII tabulature
 
 =head1 SYNOPSIS
 
@@ -148,7 +148,7 @@ start of the tab rendering.  For example, the length of each unit
 of time can be specified by passing a C<MIDI::Simple> duration value
 (eg 'sn').
 
-Additionally, a "control line" for individulal note modification may
+Additionally, a "control line" for individual note modification may
 be included in the tab, at the same vertical position as the note it
 modifies.  This line must be named C<CTL>.  At this point it is only
 used to specify triplet timing.
@@ -163,7 +163,7 @@ front of you).
 
 Time runs from left to right.  You can 'tune' the guitar by specifying
 different root notes for the strings.  These should be specified as a
-C<MIDI::Simple> alphanumeric absolute note value (eg 'A2').  The
+C<MIDI::Simple> alphanumeric absolute note value (e.g. 'A2').  The
 numbers of the tablature represent the fret at which the note is
 played.
 
@@ -314,7 +314,7 @@ sub from_drum_tab {
 
   from_piano_tab($object, $tab_text, @noops)
 
-Each horizonal line represents a different note on the piano and time
+Each horizontal line represents a different note on the piano and time
 runs from left to right.  The values on the line represent volumes
 from 1 to 9.
 

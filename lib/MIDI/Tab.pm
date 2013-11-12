@@ -21,7 +21,7 @@ use constant CONTROL => 'CTL';
 
 =head1 NAME
 
-MIDI::Tab - Generate MIDI from ASCII tablature
+MIDI::Tab - Generate MIDI from ASCII tabulature
 
 =head1 SYNOPSIS
 

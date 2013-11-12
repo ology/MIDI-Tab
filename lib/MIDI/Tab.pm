@@ -1,4 +1,5 @@
 package MIDI::Tab;
+
 # ABSTRACT: Generate MIDI from ASCII tablature
 
 use strict;
@@ -7,8 +8,12 @@ use warnings;
 use MIDI::Simple;
 
 use base 'Exporter';
-our @ISA = qw(Exporter);
-our @EXPORT = qw(from_guitar_tab from_drum_tab from_piano_tab);
+our @ISA    = qw(Exporter);
+our @EXPORT = qw(
+    from_guitar_tab
+    from_drum_tab
+    from_piano_tab
+);
 
 our $VERSION = '0.04';
 
@@ -184,18 +189,21 @@ sub from_guitar_tab {
     my @subs;
     for my $line (keys %lines) {
         my ($base_note_number) = is_absolute_note_spec($line);
-        die "Invalid base type: $line" unless $base_note_number || $line eq CONTROL();
+        die "Invalid base type: $line"
+            unless $base_note_number || $line eq CONTROL();
 
         my $_sub = sub {
             my $score = shift;
 
             # Split tab lines into notes and control.
             my @notes = ();
-            @notes = _split_lines(\%lines, $line, $base_note_number) unless $line eq CONTROL();
+            @notes = _split_lines(\%lines, $line, $base_note_number)
+                unless $line eq CONTROL();
 
             # Collect the noop controls.
             my @control = ();
-            @control = _split_lines(\%lines, CONTROL()) if exists $lines{CONTROL()};
+            @control = _split_lines(\%lines, CONTROL())
+                if exists $lines{CONTROL()};
 
             # Keep track of the beat.
             my $i = 0;
@@ -268,16 +276,19 @@ sub from_drum_tab {
         my $_sub = sub {
             my $score = shift;
 
-            die "Invalid drum type: $line" unless $drum_notes{$line} || $line eq CONTROL();
+            die "Invalid drum type: $line"
+                unless $drum_notes{$line} || $line eq CONTROL();
             my $drum = $drum_notes{$line};
 
             # Split tab lines into notes and control.
             my @notes = ();
-            @notes = _split_lines(\%lines, $line) unless $line eq CONTROL();
+            @notes = _split_lines(\%lines, $line)
+                unless $line eq CONTROL();
 
             # Collect the noop controls.
             my @control = ();
-            @control = _split_lines(\%lines, CONTROL()) if exists $lines{CONTROL()};
+            @control = _split_lines(\%lines, CONTROL())
+                if exists $lines{CONTROL()};
 
             # Keep track of the beat.
             my $i = 0;
@@ -342,7 +353,8 @@ sub from_piano_tab {
 
             # Collect the noop controls.
             my @control = ();
-            @control = _split_lines(\%lines, CONTROL()) if exists $lines{CONTROL()};
+            @control = _split_lines(\%lines, CONTROL())
+                if exists $lines{CONTROL()};
 
             # Keep track of the beat.
             my $i = 0;
@@ -383,7 +395,8 @@ sub _parse_tab {
 
     # Set a regular expression to capture parts of the tab.
     my $re = qr/^\s*([A-Za-z0-9]+)\:\s*([0-9+-]+)\s+(.*)$/s;
-    $re = qr/^\s*([A-Z]{2,3})\:\s*([0-9+-]+)\s+(.*)$/s if $type && $type eq 'drum';
+    $re = qr/^\s*([A-Z]{2,3})\:\s*([0-9+-]+)\s+(.*)$/s
+        if $type && $type eq 'drum';
 
     # Build lines from the tabulature.
     my %lines;

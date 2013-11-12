@@ -21,7 +21,7 @@ use constant CONTROL => 'CTL';
 
 =head1 NAME
 
-MIDI::Tab - Generate MIDI from ASCII tabulature
+MIDI::Tab - Generate MIDI from ASCII tablature
 
 =head1 SYNOPSIS
 
@@ -398,7 +398,7 @@ sub _parse_tab {
     $re = qr/^\s*([A-Z]{2,3})\:\s*([0-9+-]+)\s+(.*)$/s
         if $type && $type eq 'drum';
 
-    # Build lines from the tabulature.
+    # Build lines from the tablature.
     my %lines;
     while($tab =~ /$re/g) {
         my ($note, $line, $remainder) = ($1, $2, $3);

@@ -15,13 +15,9 @@ our @EXPORT = qw(
     from_piano_tab
 );
 
-our $VERSION = '0.04';
+our $VERSION = '0.0401';
 
 use constant CONTROL => 'CTL';
-
-=head1 NAME
-
-MIDI::Tab - Generate MIDI from ASCII tablature
 
 =head1 SYNOPSIS
 

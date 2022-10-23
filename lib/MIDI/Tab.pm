@@ -5,7 +5,9 @@ package MIDI::Tab;
 use strict;
 use warnings;
 
-use MIDI::Simple;
+use MIDI::Simple qw(is_absolute_note_spec);
+
+our $VERSION = '0.0402';
 
 use base 'Exporter';
 our @ISA    = qw(Exporter);
@@ -14,8 +16,6 @@ our @EXPORT = qw(
     from_drum_tab
     from_piano_tab
 );
-
-our $VERSION = '0.0401';
 
 use constant CONTROL => 'CTL';
 

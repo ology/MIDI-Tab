@@ -1,6 +1,8 @@
 Revision history for MIDI-Tab
 
 {{$NEXT}}
+
+0.0402 2022-10-23 10:42:23
     - Fixed copyright.
     - Only import what is necessary from M::S.
 

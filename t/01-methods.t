@@ -1,7 +1,7 @@
-#!perl -T
 use strict;
 use warnings;
-use Test::More 'no_plan';
+
+use Test::More;
 
 BEGIN {
     use_ok('MIDI::Tab');
@@ -55,3 +55,5 @@ new_score;
 synch( sub { from_drum_tab($_[0], $tab, 'en') } );
 write_score($file);
 ok -s $file, 'control';
+
+done_testing();

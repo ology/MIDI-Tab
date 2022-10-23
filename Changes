@@ -1,6 +1,8 @@
 Revision history for MIDI-Tab
 
 {{$NEXT}}
+    - Fixed copyright.
+    - Only import what is necessary from M::S.
 
 0.0401 2014-08-30
     - Enhanced dzil distribution
